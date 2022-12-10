@@ -9,6 +9,7 @@ public class Escape : MonoBehaviour
     [SerializeField] private NavMeshAgent agent = null;
     [SerializeField] private Transform player = null;
     [SerializeField] private float displacementDist = 1;
+    [SerializeField] private float aggroRange = 10;
     
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
@@ -32,7 +33,8 @@ public class Escape : MonoBehaviour
         
         Vector3 dir = (player.position - transform.position).normalized;
 
-        MoveToPos(transform.position - dir * displacementDist);
+        if (Vector3.Distance(transform.position, player.position) < aggroRange)
+            MoveToPos(transform.position - dir * displacementDist);
     }
 
     private void MoveToPos(Vector3 pos) {
