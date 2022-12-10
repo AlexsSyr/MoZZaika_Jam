@@ -22,7 +22,6 @@ public class ScoreCounter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            //other.gameObject.SetActive(false);
             Destroy(other.gameObject);
             count = count + scorePerCoin;
         }
