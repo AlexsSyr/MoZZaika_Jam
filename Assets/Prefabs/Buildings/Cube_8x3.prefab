@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalScale.x
-      value: 80
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalScale.y
@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.7973404
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 616.8945
       objectReference: {fileID: 0}
     - target: {fileID: 692727344474475475, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1948532162089989739, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: Cube_8x3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a85a722725474f468ff5aa471eb9c93, type: 3}
