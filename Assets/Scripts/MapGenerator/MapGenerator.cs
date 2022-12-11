@@ -14,6 +14,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] GameObject[] roadPrefabs;
     [SerializeField] GameObject[] housePrefabs;
     [SerializeField] GameObject[] prefabs;
+    [SerializeField] GameObject[] wallPrefabs;
 
     [SerializeField] int minKeyPointCount = 5;
     [SerializeField] int maxKeyPointCount = 10;
@@ -196,6 +197,31 @@ public class MapGenerator : MonoBehaviour
         }
 
         GetComponent<CoinSpawner>().FindCoinSpawnPoints();
+
+        Instantiate(wallPrefabs[1], new Vector3(-cellSize, 0, -cellSize), Quaternion.identity).transform.Rotate(0, 90, 0);
+        Instantiate(wallPrefabs[1], new Vector3(-cellSize, 0, mapSize.y * cellSize), Quaternion.identity).transform.Rotate(0, 180, 0);
+        Instantiate(wallPrefabs[1], new Vector3(mapSize.x * cellSize, 0, -cellSize), Quaternion.identity);
+        Instantiate(wallPrefabs[1], new Vector3(mapSize.x * cellSize, 0, mapSize.y * cellSize), Quaternion.identity).transform.Rotate(0, -90, 0); ;
+       
+        for(int i = 0; i < mapSize.y; ++i)
+        {
+            Instantiate(wallPrefabs[0], new Vector3(-cellSize, 0, i * cellSize), Quaternion.identity).transform.Rotate(0, 180, 0);
+        }
+
+        for (int i = 0; i < mapSize.y; ++i)
+        {
+            Instantiate(wallPrefabs[0], new Vector3(mapSize.x * cellSize, 0, i * cellSize), Quaternion.identity).transform.Rotate(0, 0, 0);
+        }
+
+        for (int i = 0; i < mapSize.y; ++i)
+        {
+            Instantiate(wallPrefabs[0], new Vector3(i * cellSize, 0, -cellSize), Quaternion.identity).transform.Rotate(0, 90, 0);
+        }
+
+        for (int i = 0; i < mapSize.y; ++i)
+        {
+            Instantiate(wallPrefabs[0], new Vector3(i * cellSize, 0, mapSize.y * cellSize), Quaternion.identity).transform.Rotate(0, 270, 0);
+        }
     }
 
     List<Vector2Int> GenerateKeyPoints()

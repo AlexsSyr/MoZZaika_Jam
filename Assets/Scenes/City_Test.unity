@@ -1005,6 +1005,9 @@ MonoBehaviour:
   - {fileID: 8231310606736502116, guid: 7cad545426b08a04cb648f03cc679096, type: 3}
   prefabs:
   - {fileID: 1049789205150856134, guid: 11edb9891d2ce4a43be5c16dbad73eb8, type: 3}
+  wallPrefabs:
+  - {fileID: 7881896643173610799, guid: 4d3bba4b0bd386d4da4159f6cefc60aa, type: 3}
+  - {fileID: 6731740018573247618, guid: 757261a97df103b43b420e6efe8717d8, type: 3}
   minKeyPointCount: 15
   maxKeyPointCount: 30
 --- !u!4 &1645116344
