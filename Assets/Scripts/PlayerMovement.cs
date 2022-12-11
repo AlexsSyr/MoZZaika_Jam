@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         if (direction == Vector3.zero)
         {
             rb.velocity = Vector3.zero;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = targetRotation;
             return;
         }
 
