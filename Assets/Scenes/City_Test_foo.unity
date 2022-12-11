@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
+  m_IndirectSpecularColor: {r: 261.85736, g: 324.42407, b: 429.44516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,7 +154,7 @@ Transform:
   - {fileID: 1353899077}
   - {fileID: 177960182}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177960179
 GameObject:
@@ -240,6 +240,67 @@ Transform:
   m_Father: {fileID: 27669886}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 8.714, y: 0, z: 0}
+--- !u!1 &300849675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300849677}
+  - component: {fileID: 300849676}
+  m_Layer: 0
+  m_Name: NavmeshSurface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &300849676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300849675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!4 &300849677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300849675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.4822583, y: -2.9353483, z: -4.5281754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &358157724
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,9 +524,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextBeforeScore: 
+  TextBeforeFinalScore: 
   TextBeforeTime: 
   ScoreText: {fileID: 1580330634}
   TimeRemainingText: {fileID: 1438784927}
+  FinalScoreText: {fileID: 0}
 --- !u!114 &808840475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +605,7 @@ RectTransform:
   - {fileID: 1580330636}
   - {fileID: 1438784929}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -642,7 +705,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1242332447
 MonoBehaviour:
@@ -801,7 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80c633f8a756d64e802aa50954f8df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
+  score: 0
   scorePerCoin: 1
 --- !u!114 &1353899080
 MonoBehaviour:
@@ -1115,7 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e21ef7325ed334d9957fd26061d458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 25, y: 25}
+  mapSize: {x: 3, y: 3}
   cellSize: 2.5
   roadPrefabs:
   - {fileID: 4469732244287543074, guid: b9df16f20adc07f45aec670fd113f4a0, type: 3}
@@ -1133,6 +1196,7 @@ MonoBehaviour:
   - {fileID: 6731740018573247618, guid: 757261a97df103b43b420e6efe8717d8, type: 3}
   minKeyPointCount: 15
   maxKeyPointCount: 30
+  surface: {fileID: 300849676}
 --- !u!4 &1645116344
 Transform:
   m_ObjectHideFlags: 0
@@ -1146,7 +1210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1645116345
 MonoBehaviour:
@@ -1229,5 +1293,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
