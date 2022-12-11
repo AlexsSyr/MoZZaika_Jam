@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("TestCity");
     }
 
     public void ToMenu()
