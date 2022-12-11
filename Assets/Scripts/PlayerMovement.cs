@@ -10,11 +10,15 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private bool isLock;
 
+    private Animator animator = null;
+    public GameObject child = null;
+
     void Start()
     {
         isLock = false;
         rb = GetComponent<Rigidbody>();
         m_CameraPos = followCamera.transform.position - transform.position;
+        animator = child.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -33,9 +37,10 @@ public class PlayerMovement : MonoBehaviour
         if (direction == Vector3.zero)
         {
             rb.velocity = Vector3.zero;
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = targetRotation;
+            animator.SetBool("isRunning", false);
             return;
+        } else {
+            animator.SetBool("isRunning", true);
         }
 
         direction.Normalize();

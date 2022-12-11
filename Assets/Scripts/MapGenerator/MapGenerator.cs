@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UIElements;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] int minKeyPointCount = 5;
     [SerializeField] int maxKeyPointCount = 10;
+
+    [SerializeField] NavMeshSurface surface = null;
 
     enum TileType
     {
@@ -222,6 +225,8 @@ public class MapGenerator : MonoBehaviour
         {
             Instantiate(wallPrefabs[0], new Vector3(i * cellSize, 0, mapSize.y * cellSize), Quaternion.identity).transform.Rotate(0, 270, 0);
         }
+
+        surface.BuildNavMesh();
     }
 
     List<Vector2Int> GenerateKeyPoints()
