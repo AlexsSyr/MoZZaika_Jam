@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (direction == Vector3.zero)
         {
             rb.velocity = Vector3.zero;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
             animator.SetBool("isRunning", false);
             return;
         } else {
