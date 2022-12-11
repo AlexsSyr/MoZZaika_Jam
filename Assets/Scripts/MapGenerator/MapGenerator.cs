@@ -185,10 +185,17 @@ public class MapGenerator : MonoBehaviour
                 Vector3 spwanPosition = new Vector3(i * cellSize, 0, (mapSize.x - 1 - j) * cellSize);
                 GameObject newObject = Instantiate(obj, spwanPosition, Quaternion.identity);
                 
-                newObject.transform.Rotate(new Vector3(0, tileInfo.angle, 0));
+                if(tileInfo.tileType != TileType.EMPTY)
+                    newObject.transform.Rotate(new Vector3(0, tileInfo.angle, 0));
+                else
+                {
+                    newObject.transform.Rotate(new Vector3(0, 90 * UnityEngine.Random.Range(0, 4), 0));
+                }
 
             }
         }
+
+        GetComponent<CoinSpawner>().FindCoinSpawnPoints();
     }
 
     List<Vector2Int> GenerateKeyPoints()
