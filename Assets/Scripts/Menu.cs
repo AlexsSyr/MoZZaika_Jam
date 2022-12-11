@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("scene_final");
     }
 
     public void ShowCredits()
